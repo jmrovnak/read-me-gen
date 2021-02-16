@@ -2,33 +2,53 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-function userPrompt () {
-    return inquirer.prompt([
+ inquirer.prompt([
         {
             type: "input",
-            name: "projectTitle",
+            name: "Project Title",
             message: "What is the title of your project?"
         },
 
         {
             type: "input",
-            name: "description",
-            message: "Please enter a brief description of your project."
+            name: "Description",
+            message: "Please enter a brief description of your project:"
         },
 
         {
             type: "input",
-            name: "installation",
-            message: "Please enter installation instructions for your project."
+            name: "Installation Instructions",
+            message: "Please enter installation instructions for your project:"
         },
         
         {
             type: "input",
-            name: "usage",
+            name: "Usage Guidelines",
             message: "What is the intended usage of this application?"
+        },
+
+        {
+           type: "input",
+           name: "Contributors",
+           message: "Other project contributors:"
+        },
+
+        {
+            type: "input",
+            name: "Testing",
+            message: "Instructions for testing:"
+        },
+
+        {
+            type: "list",
+            name: "License(s)",
+            message: "Project Licensing",
+            choices: ["Apache", "BSD 3", "BSD 2", "GNU General", "GNU LIbrary", "MIT", "Mozilla"]
         }
 
-    ])
-}
 
-console.log("test");
+    ])
+
+        .then((responses) => {
+            console.log(responses);
+        })
