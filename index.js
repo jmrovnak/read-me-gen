@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const inquirer = require('inquirer');
+
 
 function userPrompt () {
     return inquirer.prompt([
@@ -30,3 +30,5 @@ function userPrompt () {
 
     ])
 }
+
+console.log("test");
