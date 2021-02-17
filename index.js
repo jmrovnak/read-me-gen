@@ -12,18 +12,18 @@ const fs = require('fs');
         {
             type: "input",
             name: "Description",
-            message: "Please enter a brief description of your project:"
+            message: "Please provide a brief description of your project:"
         },
 
         {
             type: "input",
-            name: "Installation Instructions",
-            message: "Please enter installation instructions for your project:"
+            name: "Installation",
+            message: "Please provide installation instructions for your project:"
         },
         
         {
             type: "input",
-            name: "Usage Guidelines",
+            name: "Usage",
             message: "What is the intended usage of this application?"
         },
 
