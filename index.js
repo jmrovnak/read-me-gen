@@ -5,7 +5,7 @@ const fs = require('fs');
  inquirer.prompt([
         {
             type: "input",
-            name: "Project Title",
+            name: "Title",
             message: "What is the title of your project?"
         },
 
@@ -51,4 +51,9 @@ const fs = require('fs');
 
         .then((responses) => {
             console.log(responses);
+
+            const filename = `${responses.Title.toLowerCase().split(' ').join('')}.json`;
+            fs.writeFile(filename, JSON.stringify(responses, null, '\t'), (err) =>
+            err ? console.log(err) : console.log('File created')
+            );
         })
