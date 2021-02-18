@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const util = require('util');
 
 
- inquirer.prompt([
+ inquirer
+    .prompt([
         {
             type: "input",
             name: "Title",
@@ -41,7 +43,7 @@ const fs = require('fs');
 
         {
             type: "list",
-            name: "License(s)",
+            name: "Licensing",
             message: "Project Licensing",
             choices: ["Apache", "BSD 3", "BSD 2", "GNU General", "GNU LIbrary", "MIT", "Mozilla"]
         }
@@ -52,8 +54,9 @@ const fs = require('fs');
         .then((responses) => {
             console.log(responses);
 
-            const filename = `${responses.Title.toLowerCase().split(' ').join('')}.json`;
+             const filename = `${responses.Title.toLowerCase().split(' ').join('')}.json`;
             fs.writeFile(filename, JSON.stringify(responses, null, '\t'), (err) =>
             err ? console.log(err) : console.log('File created')
             );
         })
+
