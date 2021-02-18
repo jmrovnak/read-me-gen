@@ -1,4 +1,4 @@
-function createReadMe(responses) {
+function createRM(responses) {
 
     return `
 
@@ -20,4 +20,4 @@ function createReadMe(responses) {
 
 }
 
-module.exports = createReadMe;
+module.exports = createRM;
